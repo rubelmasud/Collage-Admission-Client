@@ -1,15 +1,32 @@
-import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { FiMenu } from 'react-icons/fi';
 import logo from '../../assets/Logo/Untitled-removebg-preview.png'
+import { AuthContext } from "../../Providers/AuthProvaider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
     const [sticky, setSticky] = useState(false)
     const [open, setOpen] = useState(false)
+    const { user, LogOut } = useContext(AuthContext)
+    console.log(user);
+
+
+
+    const handleLogOut = () => {
+        LogOut()
+            .then(() => {
+                toast.success('User Log Out Is Successfully !');
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
 
 
     const menuItems =
         <div className="md:flex gap-5 items-center text-[16px] font-medium">
+
             <li>
                 <NavLink to="/" className={({ isActive }) => isActive ? "active" : "default"} > Home </NavLink>
             </li>
@@ -25,23 +42,25 @@ const Navbar = () => {
                 <NavLink to="/myCollege" className={({ isActive }) => isActive ? "active" : "default"}>   My College</NavLink>
             </li>
 
-            <div className="dropdown dropdown-end">
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                        <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                    </div>
-                </label>
-                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li>
-                        <a className="justify-between">
-                            Profile
-                            <span className="badge">New</span>
-                        </a>
-                    </li>
-                    <li><a>Settings</a></li>
-                    <li><a>Logout</a></li>
-                </ul>
-            </div>
+            {
+                user ? <div className="dropdown dropdown-end">
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        <div className="w-10 rounded-full online">
+                            <img className="online" src={user?.photoURL} />
+                        </div>
+                    </label>
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li>
+                            <a className="justify-between"> Profile</a>
+                        </li>
+                        <li onClick={handleLogOut}><a>Logout</a></li>
+                    </ul>
+                </div>
+                    :
+                    <Link to='login'>
+                        <button className="btn btn-error btn-sm text-white">Login Now</button>
+                    </Link>
+            }
         </div>
 
 
@@ -53,7 +72,7 @@ const Navbar = () => {
     }, [])
 
     return (
-        <nav className={`fixed w-full left-0 top-0 bg-base-200 z-[999] ${sticky ? ' bg-white/40 ' : 'text-white'}`}>
+        <nav className={`fixed w-full left-0 top-0 bg-base-200 z-[999] ${sticky ? ' bg-white/60 ' : 'text-white'}`}>
             <div className="flex justify-between items-center">
                 <div className="mx-7 flex items-center gap-2">
                     <img className="w-16 h-15" src={logo} alt="" />
