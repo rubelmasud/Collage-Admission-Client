@@ -9,8 +9,7 @@ const Navbar = () => {
 
 
     const menuItems =
-        <div className="md:flex gap-10  items-center text-[16px] font-medium">
-
+        <div className="md:flex gap-5 items-center text-[16px] font-medium">
             <li>
                 <NavLink to="/" className={({ isActive }) => isActive ? "active" : "default"} > Home </NavLink>
             </li>
@@ -54,11 +53,11 @@ const Navbar = () => {
     }, [])
 
     return (
-        <nav className={`fixed w-full left-0 top-0 bg-base-200  z-[999] ${sticky ? ' bg-white/40 ' : 'text-white'}`}>
+        <nav className={`fixed w-full left-0 top-0 bg-base-200 z-[999] ${sticky ? ' bg-white/40 ' : 'text-white'}`}>
             <div className="flex justify-between items-center">
                 <div className="mx-7 flex items-center gap-2">
                     <img className="w-16 h-15" src={logo} alt="" />
-                    <h1 className="md:text-3xl text-1xl font-bold text-black">Collage Admission</h1>
+                    <h1 className="md:text-3xl text-1xl font-bold text-black">EduBookings</h1>
                 </div>
                 <div className={`${sticky ? 'md:bg-white/0 bg-white' : 'bg-blue-50'} md:block px-7 hidden text-gray-900 font-medium py-2 rounded-bl-full`}>
                     <ul className="flex items-center gap-1 py-2 text-lg">
