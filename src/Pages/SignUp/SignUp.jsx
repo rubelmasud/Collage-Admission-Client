@@ -2,12 +2,12 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
-const Image_hosting_token = import.meta.env.VITE_IMGBB_KEY
 import { AuthContext } from "../../Providers/AuthProvaider";
 import { toast } from "react-toastify";
 import ParticlesBg from 'particles-bg';
 import GoogleLogin from "../../Shered/GoogleLogin";
+
+const Image_hosting_token = import.meta.env.VITE_IMGBB_KEY
 
 const SignUp = () => {
     const [show, setShow] = useState(false)
