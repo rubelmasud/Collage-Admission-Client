@@ -51,7 +51,7 @@ const Navbar = () => {
                     <li>
                         <a className="justify-between">
                             Profile
-                            <span className="badge shadow-xl uppercase font-semibold font-serif">{user?.displayName}</span>
+                            <span className="badge text-xs font-serif">{user?.displayName}</span>
                         </a>
                     </li>
                     {

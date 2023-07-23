@@ -4,10 +4,13 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvaider";
 import { toast } from "react-toastify";
+import GoogleLogin from "../../Shered/GoogleLogin";
+import ParticlesBg from 'particles-bg';
+
 
 const Login = () => {
     const [show, setShow] = useState(false)
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const { SignInUser } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
@@ -19,6 +22,7 @@ const Login = () => {
             .then((result) => {
                 result.user;
                 toast.success('User Log In Is Successfully !');
+                reset()
                 navigate(from, { replace: true })
             })
             .catch((error) => {
@@ -28,11 +32,30 @@ const Login = () => {
 
 
     return (
-        <div className="md:h-screen grid md:grid-cols-2 justify-center items-center ">
-            <div className="-mt-10 md:mt-4">
-                <img src="https://i.ibb.co/YQ60QFB/flat-university-concept-23-2148184172.jpg" alt="flat-university-concept-23-2148184172" border="0" />
-            </div>
-            <form onSubmit={handleSubmit(onSubmit)} className="bg-blue-50 shadow-lg rounded-lg mx-4 p-12">
+        <div className="w-full h-screen md:mt-20 bg-red-200">
+            <ParticlesBg
+                params={{
+                    particles: {
+                        number: {
+                            value: 80
+                        },
+                        size: {
+                            value: 4
+                        }
+                    },
+                    interactivity: {
+                        events: {
+                            onhover: {
+                                enable: true,
+                                mode: "repulse"
+                            }
+                        }
+                    }
+                }}
+
+            />
+
+            <form onSubmit={handleSubmit(onSubmit)} className=" absolute md:top-[20%] md:right-[35%] top-20 bg-transparent md:w-4/12 w-full mx-4 shadow-lg rounded-lg py-12 p-2">
                 <input
                     type="email"
                     className="w-10/12 mx-auto h-12  rounded-md shadow-lg my-4 block px-2  border-l-2 border-r-2 border-orange-500"
@@ -65,9 +88,13 @@ const Login = () => {
                 </div>
 
 
-                <div className="flex pt-4 w-full mx-auto gap-3">
+                <div className="flex pt-4 w-full justify-center gap-3 text-center">
                     <small> Dont have an account ? </small>
-                    <p className="text-orange-500 underline"><Link to='/signup'>Place Register</Link></p>
+                    <p className="text-white underline"><Link to='/signup'>Place Register</Link></p>
+                </div>
+
+                <div className="">
+                    <GoogleLogin />
                 </div>
             </form>
 
