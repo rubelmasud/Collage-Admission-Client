@@ -4,8 +4,8 @@ const AdmissionCart = ({ my_college }) => {
     console.log(my_college);
     const { Address, BirthDay, CollageImg, College_name, Events, History, Phone, Sports, StudentEmail, StudentName, Student_photo, Subject } = my_college || {}
     return (
-        <div className="card card-side bg-blue-50 shadow-xl ">
-            <figure><img className='w-72 h-full' src={CollageImg} alt="Movie" /></figure>
+        <div className="card lg:card-side bg-blue-50 shadow-xl mx-4">
+            <figure><img className='md:w-72 h-full' src={CollageImg} alt="Movie" /></figure>
             <div className="card-body">
                 <h2 className="font-semibold">{College_name}</h2>
                 <p className="text-sm">{History}</p>

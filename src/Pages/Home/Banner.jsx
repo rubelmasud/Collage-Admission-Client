@@ -4,6 +4,7 @@ import banner1 from '../../assets/Images/banner-1.avif'
 import banner2 from '../../assets/Images/banner-2.avif'
 import banner3 from '../../assets/Images/banner-3.avif'
 import banner4 from '../../assets/Images/banner-4.avif'
+import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
@@ -14,7 +15,7 @@ const Banner = () => {
                 <div className="banner-content md:text-left  absolute right-20 top-[30%] bg-gradient-to-l from-indigo-100 md:p-12 rounded-md shadow-xl">
                     <h1 className="md:text-4xl font-bold">Welcome to <span className="text-red-500">EduBookings</span></h1>
                     <p className="md:text-neutral-500 text-black md:my-4">Unlock Your Potential, Embrace Your Future</p>
-                    <button className="btn btn-outline btn-sm">Apply Now</button>
+                    <Link to="/admission" className="btn btn-outline btn-sm">Apply Now</Link>
                 </div>
             </div>
             <div>
@@ -22,7 +23,7 @@ const Banner = () => {
                 <div className="banner-content md:text-left  absolute right-20 top-[30%] bg-gradient-to-l from-indigo-100 md:p-12 rounded-md shadow-xl">
                     <h1 className="md:text-4xl font-bold">Welcome to <span className="text-red-500">EduBookings</span></h1>
                     <p className="md:text-neutral-500 text-black md:my-4">Unlock Your Potential, Embrace Your Future</p>
-                    <button className="btn btn-outline btn-sm">Apply Now</button>
+                    <Link to="/admission" className="btn btn-outline btn-sm">Apply Now</Link>
                 </div>
             </div>
             <div>
@@ -30,7 +31,7 @@ const Banner = () => {
                 <div className="banner-content md:text-left  absolute right-20 top-[30%] bg-gradient-to-l from-indigo-100 md:p-12 rounded-md shadow-xl">
                     <h1 className="md:text-4xl font-bold">Welcome to <span className="text-red-500">EduBookings</span></h1>
                     <p className="md:text-neutral-500 text-black md:my-4">Unlock Your Potential, Embrace Your Future</p>
-                    <button className="btn btn-outline btn-sm">Apply Now</button>
+                    <Link to="/admission" className="btn btn-outline btn-sm">Apply Now</Link>
                 </div>
             </div>
             <div>
@@ -38,7 +39,7 @@ const Banner = () => {
                 <div className="banner-content md:text-left  absolute right-20 top-[30%] bg-gradient-to-l from-indigo-100 md:p-12 rounded-md shadow-xl">
                     <h1 className="md:text-4xl font-bold">Welcome to <span className="text-red-500">EduBookings</span></h1>
                     <p className="md:text-neutral-500 text-black md:my-4">Unlock Your Potential, Embrace Your Future</p>
-                    <button className="btn btn-outline btn-sm">Apply Now</button>
+                    <Link to="/admission" className="btn btn-outline btn-sm">Apply Now</Link>
                 </div>
             </div>
         </Carousel>
