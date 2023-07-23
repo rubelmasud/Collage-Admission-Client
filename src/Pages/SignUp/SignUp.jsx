@@ -46,7 +46,7 @@ const SignUp = () => {
                             updateUserProfile(data.name, photoUrl)
                         }).then(() => {
                             const savedUser = { name: data.name, image: photoUrl, email: data.email }
-                            fetch('', {
+                            fetch('http://localhost:5000/users', {
                                 method: 'POST',
                                 headers: {
                                     'content-type': 'application/json'

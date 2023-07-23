@@ -12,18 +12,19 @@ const GoogleLogin = () => {
     const location = useLocation()
     const from = location.state?.from?.pathname || "/"
 
+
     const handleGoogleLogin = () => {
         signInGoogle()
             .then((result) => {
                 const GoogleUser = result.user;
                 console.log(GoogleUser);
-                const savedUser = { name: GoogleUser.displayName, image: GoogleUser.photoURL, email: GoogleUser.email }
-                fetch('', {
+                const savedGoogleUserInfo = { name: GoogleUser.displayName, image: GoogleUser.photoURL, email: GoogleUser.email }
+                fetch('http://localhost:5000/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
                     },
-                    body: JSON.stringify(savedUser)
+                    body: JSON.stringify(savedGoogleUserInfo)
                 })
                     .then(res => res.json())
                     .then(() => {
@@ -39,8 +40,21 @@ const GoogleLogin = () => {
     const handleGithubLogin = () => {
         signInGithub()
             .then((result) => {
-                const user = result.user;
-                console.log(user);
+                const GithubUser = result.user;
+                console.log(GithubUser);
+                const savedGitHubUserInfo = { name: GithubUser.displayName, image: GithubUser.photoURL, email: GithubUser.email }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(savedGitHubUserInfo)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        navigate(from, { replace: true })
+                        toast.success('User login  Successfully !');
+                    })
             }).catch((error) => {
                 console.log(error);
             });
