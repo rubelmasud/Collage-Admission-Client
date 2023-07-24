@@ -1,8 +1,10 @@
 # Collage Admission Project
+>>
+#### This Project is MERN Stack Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+>#### Usage:
+>>react js, react-dom, Tailwind css, firebase, node js , Express js, framer-motion, particles-bg, react-hook-form, react-icons, react-responsive-carousel,react-router-dom, react-toastify
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Deployment:
+>>Server Code Deploy: Vercel <br>
+>> Client Code Deploy : Firebase
