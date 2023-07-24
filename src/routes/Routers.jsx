@@ -8,6 +8,7 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import Error from "../Pages/Error/Error";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 
 const router = createBrowserRouter([
     {
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
             { path: '/admission', element: <Admission /> },
             { path: '/myCollege', element: <PrivateRoute><My_Collage /></PrivateRoute> },
             { path: '/login', element: <Login /> },
-            { path: '/signUp', element: <SignUp /> }
+            { path: '/signUp', element: <SignUp /> },
+            { path: '/profile', element: <PrivateRoute><UpdateProfile /></PrivateRoute> }
         ]
 
     },

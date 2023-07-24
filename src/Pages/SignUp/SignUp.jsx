@@ -15,7 +15,7 @@ const SignUp = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
-    const from = location.state?.from?.pathname || '/login'
+    const from = location.state?.from?.pathname || '/'
 
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
     const password = watch('password', '');
@@ -45,7 +45,7 @@ const SignUp = () => {
                             console.log(user);
                             updateUserProfile(data.name, photoUrl)
                         }).then(() => {
-                            const savedUser = { name: data.name, image: photoUrl, email: data.email }
+                            const savedUser = { name: data.name, image: photoUrl, email: data.email, password: data.password }
                             fetch('http://localhost:5000/users', {
                                 method: 'POST',
                                 headers: {

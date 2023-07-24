@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { AuthContext } from "../../Providers/AuthProvaider";
 
 const Image_hosting_token = import.meta.env.VITE_IMGBB_KEY
 
 const AdmissionForm = ({ selectedCollege }) => {
+    const { user } = useContext(AuthContext)
     const { register, handleSubmit, reset } = useForm();
     const { image, name, researchHistory, sports, events } = selectedCollege || {}
 
@@ -51,6 +54,7 @@ const AdmissionForm = ({ selectedCollege }) => {
                 />
                 <input
                     type="email"
+                    value={user?.email}
                     className="admission-input"
                     placeholder="Your Email"
                     {...register("email")}

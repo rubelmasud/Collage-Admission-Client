@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FiMenu } from 'react-icons/fi';
 import logo from '../../assets/Logo/Untitled-removebg-preview.png'
 import { AuthContext } from "../../Providers/AuthProvaider";
@@ -49,10 +49,10 @@ const Navbar = () => {
                 </label>
                 <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                     <li>
-                        <a className="justify-between">
+                        <Link to='/profile' className="justify-between">
                             Profile
                             <span className="badge text-xs font-serif">{user?.displayName}</span>
-                        </a>
+                        </Link>
                     </li>
                     {
                         user ? <li onClick={handleLogOut}><a>Logout</a></li>
@@ -77,8 +77,8 @@ const Navbar = () => {
             <nav className={`fixed w-full left-0 top-0 bg-base-200 z-[999] ${sticky ? ' bg-white/60 ' : 'text-white'}`}>
                 <div className="flex justify-between items-center">
                     <div className="mx-7 flex items-center gap-2">
-                        <img className="w-16 h-15" src={logo} alt="" />
-                        <h1 className="md:text-3xl text-1xl font-bold text-black">EduBookings</h1>
+                        <img className="w-16 h-15 animate-bounce" src={logo} alt="" />
+                        <h1 className="md:text-3xl text-1xl font-bold text-black animate-pulse">EduBookings</h1>
                     </div>
                     <div className={`${sticky ? 'md:bg-white/0 bg-white' : 'bg-blue-50'} md:block px-7 hidden text-gray-900 font-medium py-2 rounded-bl-full`}>
                         <ul className="flex items-center gap-1 py-2 text-lg">

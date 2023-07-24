@@ -54,7 +54,6 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             if (currentUser) {
-                console.log('Logged in user:', currentUser);
                 setUser(currentUser);
             } else {
                 console.log('User is not logged in.');
