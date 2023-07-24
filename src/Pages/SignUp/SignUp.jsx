@@ -75,7 +75,7 @@ const SignUp = () => {
 
 
     return (
-        <div className="w-full h-screen md:mt-20 bg-red-200">
+        <div className="w-full h-screen md:mt-20 bg-blue-50">
             <ParticlesBg
                 params={{
                     particles: {
@@ -148,9 +148,9 @@ const SignUp = () => {
                     <button className="w-full bg-blue-600  h-10 block rounded-lg font-bold text-white" type="primary">Sign Up</button>
                 </div>
 
-                <div className="flex pt-4 w-10/12 mx-auto gap-3">
+                <div className="flex pt-4 w-10/12 mx-auto gap-3 font-bold">
                     <small> Already have an account ? </small>
-                    <p className="text-white underline"><Link to='/login'>Place Login</Link></p>
+                    <p className=" underline"><Link to='/login'>Place Login</Link></p>
                 </div>
                 <div className="">
                     <GoogleLogin />
