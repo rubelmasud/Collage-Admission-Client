@@ -77,7 +77,7 @@ const Navbar = () => {
             <nav className={`fixed w-full left-0 top-0 bg-base-200 z-[999] ${sticky ? ' bg-white/60 ' : 'text-white'}`}>
                 <div className="flex justify-between items-center">
                     <div className="mx-7 flex items-center gap-2">
-                        <img className="w-16 h-15 animate-bounce" src={logo} alt="" />
+                        <img className="w-16 h-15 " src={logo} alt="" />
                         <h1 className="md:text-3xl text-1xl font-bold text-black animate-pulse">EduBookings</h1>
                     </div>
                     <div className={`${sticky ? 'md:bg-white/0 bg-white' : 'bg-blue-50'} md:block px-7 hidden text-gray-900 font-medium py-2 rounded-bl-full`}>

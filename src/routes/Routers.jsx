@@ -9,6 +9,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import Error from "../Pages/Error/Error";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
+import CollegeDetails from "../Pages/CllegeDetails/CollegeDetails";
 
 const router = createBrowserRouter([
     {
@@ -22,7 +23,12 @@ const router = createBrowserRouter([
             { path: '/myCollege', element: <PrivateRoute><My_Collage /></PrivateRoute> },
             { path: '/login', element: <Login /> },
             { path: '/signUp', element: <SignUp /> },
-            { path: '/profile', element: <PrivateRoute><UpdateProfile /></PrivateRoute> }
+            { path: '/profile', element: <PrivateRoute><UpdateProfile /></PrivateRoute> },
+            {
+                path: '/details/:id',
+                element: <PrivateRoute><CollegeDetails /></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/details/${params.id}`)
+            }
         ]
 
     },
