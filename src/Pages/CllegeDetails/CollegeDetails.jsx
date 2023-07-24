@@ -16,7 +16,7 @@ const CollegeDetails = () => {
                     <p className="text-gray-500 text-sm mb-4">Admission Date: {admissionDate}</p>
 
 
-                    <div className="flex justify-center justify-evenly">
+                    <div className="flex  justify-evenly text-left">
                         <div>
                             <h4 className="text-lg font-semibold mb-2">Events:</h4>
                             <ul className="list-disc pl-6 mb-4">

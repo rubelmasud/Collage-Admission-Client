@@ -10,7 +10,7 @@ const UpdateProfile = () => {
     const [currentUser, setCurrentUser] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/UpdateUser/${user?.email}`)
+        fetch(`https://college-booking-server-chi.vercel.app/UpdateUser/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setCurrentUser(data)
@@ -20,7 +20,7 @@ const UpdateProfile = () => {
 
     const onSubmit = data => {
         console.log(data);
-        fetch(`http://localhost:5000/updatedUser/${user?.email}`, {
+        fetch(`https://college-booking-server-chi.vercel.app/updatedUser/${user?.email}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),

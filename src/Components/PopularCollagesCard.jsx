@@ -2,7 +2,7 @@ import { BsArrowRightShort } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 const PopularCollagesCard = ({ popularCollage }) => {
-    const { admissionDate, image, name, researchHistory, sports, events, _id } = popularCollage || {};
+    const { admissionDate, image, name, researchHistory, _id } = popularCollage || {};
 
 
     return (

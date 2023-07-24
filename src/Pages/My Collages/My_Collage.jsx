@@ -7,7 +7,7 @@ const My_Collage = () => {
     const { user } = useContext(AuthContext)
     const [myColleges, setMyColleges] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/my_admissions/${user?.email}`)
+        fetch(`https://college-booking-server-chi.vercel.app/my_admissions/${user?.email}`)
             .then(res => res.json())
             .then(result => {
                 setMyColleges(result);

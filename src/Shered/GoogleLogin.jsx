@@ -19,7 +19,7 @@ const GoogleLogin = () => {
                 const GoogleUser = result.user;
                 console.log(GoogleUser);
                 const savedGoogleUserInfo = { name: GoogleUser.displayName, image: GoogleUser.photoURL, email: GoogleUser.email }
-                fetch('http://localhost:5000/users', {
+                fetch('https://college-booking-server-chi.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -43,7 +43,7 @@ const GoogleLogin = () => {
                 const GithubUser = result.user;
                 console.log(GithubUser);
                 const savedGitHubUserInfo = { name: GithubUser.displayName, image: GithubUser.photoURL, email: GithubUser.email }
-                fetch('http://localhost:5000/users', {
+                fetch('https://college-booking-server-chi.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

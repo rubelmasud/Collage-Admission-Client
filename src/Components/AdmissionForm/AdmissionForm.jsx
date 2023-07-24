@@ -23,7 +23,7 @@ const AdmissionForm = ({ selectedCollege }) => {
             .then(imageRes => {
                 const studentInfo = { StudentName: data.student_name, StudentEmail: data.email, Phone: data.phone, Subject: data.subject, BirthDay: data.date_of_birth, Address: data.address, Student_photo: imageRes.data.display_url, College_name: data.college_name, CollageImg: data.college_image, History: data.researchHistory, Sports: data.sports, Events: data.events }
 
-                fetch('http://localhost:5000/admissions', {
+                fetch('https://college-booking-server-chi.vercel.app/admissions', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

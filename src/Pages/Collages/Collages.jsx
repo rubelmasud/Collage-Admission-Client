@@ -5,7 +5,7 @@ const Collages = () => {
 
     const [collages, setColleges] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/colleges')
+        fetch('https://college-booking-server-chi.vercel.app/colleges')
             .then(res => res.json())
             .then(result => {
                 console.log(result);

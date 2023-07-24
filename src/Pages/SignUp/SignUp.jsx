@@ -46,7 +46,7 @@ const SignUp = () => {
                             updateUserProfile(data.name, photoUrl)
                         }).then(() => {
                             const savedUser = { name: data.name, image: photoUrl, email: data.email, password: data.password }
-                            fetch('http://localhost:5000/users', {
+                            fetch('https://college-booking-server-chi.vercel.app/users', {
                                 method: 'POST',
                                 headers: {
                                     'content-type': 'application/json'
