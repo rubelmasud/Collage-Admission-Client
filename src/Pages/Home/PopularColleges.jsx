@@ -22,7 +22,7 @@ const PopularColleges = () => {
         const name = form.name.value
         const options = { method: 'GET' };
 
-        fetch(`http://localhost:5000/AllCollege/${name}`, options)
+        fetch(`https://college-booking-server-chi.vercel.app/AllCollege/${name}`, options)
             .then(response => response.json())
             .then(response => setPopularColleges(response))
             .catch(err => console.error(err));
